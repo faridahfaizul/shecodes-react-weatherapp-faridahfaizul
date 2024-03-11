@@ -4,13 +4,14 @@ import axios from "axios";
 import './App.css';
 
 function App(props) {
-  
+  let [exist, setExist] = useState(false);
   let [city, setCity] = useState(props.city);
   let [weather, setWeather] = useState("");
 
   function getWeatherDetails(response) { 
     const timestamp = Date.now(); // This would be the timestamp you want to format
     const currentDate = new Intl.DateTimeFormat('en-US', {weekday: 'long', hour: '2-digit', minute: '2-digit'}).format(timestamp);
+    setExist(true);
     setWeather({  
       newcity : response.data.name,
       temperature : Math.round(response.data.main.temp),
@@ -27,11 +28,11 @@ function App(props) {
   }
 
   function search(e) {
-    e.preventDefault();
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=a95c2c6739994ba4903e007ee817e7d1&units=metric`;
     axios.get(url).then(getWeatherDetails);
   }
 
+  if (exist){
   return (
      <div className="app">
       <header>
@@ -105,6 +106,11 @@ function App(props) {
       </footer>
     </div>
   );
+  } else {
+    search();
+    return "Loading..";
+      
+  }
 }
 
 export default App;
