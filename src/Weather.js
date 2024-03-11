@@ -60,7 +60,7 @@ export default function Weather(props) {
             {weather.newcity}
           </h1>
           <div className="weather-temperature">
-             <div><WeatherIcon icon={weather.icon}/></div>
+             <div className="search-icon"><WeatherIcon icon={weather.icon}/></div>
             <div>
               <h2 className="search-temperature" id="search-temperature">{weather.temperature}</h2>
             </div>
@@ -71,8 +71,7 @@ export default function Weather(props) {
             </div>
           </div>
           <p className="search-date">
-            <span id="search-now">{weather.date}</span>,<span id="search-condition"></span>
-            {weather.description}
+            <span id="search-now">{weather.date}</span>,<span className="search-condition">{weather.description}</span>
           </p>
           <p className="search-description">
             Humidity:

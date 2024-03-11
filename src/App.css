@@ -127,6 +127,10 @@ footer {
   margin: 0;
 }
 
+.search-condition {
+  text-transform: capitalize;
+}
+
 .search-description {
   text-align: center;
   margin: 0;
