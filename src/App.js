@@ -12,14 +12,13 @@ function App(props) {
     const timestamp = Date.now(); // This would be the timestamp you want to format
     const currentDate = new Intl.DateTimeFormat('en-US', {weekday: 'long', hour: '2-digit', minute: '2-digit'}).format(timestamp);
     setWeather({  
-      newcity : city,
+      newcity : response.data.name,
       temperature : Math.round(response.data.main.temp),
       description : response.data.weather[0].description,
       date : currentDate,
       humidity : response.data.main.humidity,
       wind : Math.round(response.data.wind.speed)    
     });    
-    console.log(city);
   }
   
   function updateCity(e) {
