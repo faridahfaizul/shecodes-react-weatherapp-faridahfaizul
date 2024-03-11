@@ -91,12 +91,12 @@ function App(props) {
             Faridah Faizul
           </a>{" "}
           and is{" "}
-          <a href="https://github.com/faridahfaizul/shecodes-react-week4-homework" target="_blank" rel="noreferrer">
+          <a href="https://github.com/faridahfaizul/shecodes-react-weatherapp-project" target="_blank" rel="noreferrer">
             on GitHub
           </a>{" "}
           and{" "}
           <a
-            href="https://shecodes-react-w4-hw-faridahfaizul.netlify.app/"
+            href="https://shecodes-react-weather-faridahfaizul.netlify.app/"
             target="_blank"
             rel="noreferrer"
           >
