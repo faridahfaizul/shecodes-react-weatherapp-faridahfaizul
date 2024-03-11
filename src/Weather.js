@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import axios from "axios";
-import WeatherIcon from "./WeatherIcon";
+import WeatherTemperature from "./WeatherTemperature";
 import "@fontsource/oswald"; // Defaults to weight 400
 
 export default function Weather(props) {
@@ -60,17 +60,7 @@ export default function Weather(props) {
           <h1 className="search-city" id="search-city">
             {weather.newcity}
           </h1>
-          <div className="weather-temperature">
-             <div className="search-icon"><WeatherIcon icon={weather.icon}/></div>
-            <div>
-              <h2 className="search-temperature" id="search-temperature">{weather.temperature}</h2>
-            </div>
-            <div>
-              <h2 className="search-temperature-unit">
-                °C
-              </h2>
-            </div>
-          </div>
+        <WeatherTemperature temperature={weather.temperature} icon={weather.icon}/>         
           <p className="search-date">
             <span id="search-now">{weather.date}</span>,<span className="search-condition">{weather.description}</span>
           </p>
