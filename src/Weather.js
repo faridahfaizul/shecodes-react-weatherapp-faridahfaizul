@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
 import WeatherIcon from "./WeatherIcon";
+import "@fontsource/oswald"; // Defaults to weight 400
 
 export default function Weather(props) {
     let [exist, setExist] = useState(false);
