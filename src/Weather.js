@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
 import WeatherTemperature from "./WeatherTemperature";
+import WeatherForecast from "./WeatherForecast";
 import "@fontsource/oswald"; // Defaults to weight 400
 
 export default function Weather(props) {
@@ -19,9 +20,10 @@ export default function Weather(props) {
             description : response.data.weather[0].description,
             date : currentDate,
             humidity : response.data.main.humidity,
-            wind : Math.round(response.data.wind.speed)    
+            wind : Math.round(response.data.wind.speed),
+            lon : response.data.coord.lon,
+            lat : response.data.coord.lat
         });   
-        console.log(response.data);
     }
 
     function updateCity(e) {
@@ -35,7 +37,9 @@ export default function Weather(props) {
     }
 
     function search(e) {
-        let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=a95c2c6739994ba4903e007ee817e7d1&units=metric`;
+        let apiKey = `b35c686ba9565ba0ab254c2230937552`;
+        let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
         axios.get(url).then(getWeatherDetails);
     }
     
@@ -78,7 +82,7 @@ export default function Weather(props) {
           </p>
         </div>
         <div className="weather-forecast-border">
-          <div className="weather-forecast" id="forecast"></div>
+            <WeatherForecast lat={weather.lat} lon={weather.lon}/>
         </div>
       </main>
         </div>

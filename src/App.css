@@ -163,7 +163,26 @@ footer {
   justify-content: center;
 }
 
+.forecast-temperature {
+  display: flex;
+  justify-content: center;
+}
+
 .forecast-temperature-unit {
   font-size: 10px;
   margin-top: 3px;
+  padding-right: 3px;
+}
+
+.forecast-temperature-max {
+  display: flex;
+  justify-content: center;
+  color: grey;
+  padding-left: 3px;
+}
+
+.forecast-temperature-unit-max {
+  font-size: 10px;
+  margin-top: 3px;
+  color: grey;
 }

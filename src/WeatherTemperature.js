@@ -23,7 +23,9 @@ export default function WeatherTemperature(props) {
   if (unit === "C") {
     return (
         <div className="weather-temperature">            
-            <div className="search-icon"><WeatherIcon icon={props.icon}/></div>
+            <div className="search-icon">
+                <WeatherIcon icon={props.icon}  size={52}/>
+            </div>
             <div>
               <h2 className="search-temperature" id="search-temperature">{props.temperature}</h2>
             </div>
@@ -37,7 +39,7 @@ export default function WeatherTemperature(props) {
   } else {
     return (
         <div className="weather-temperature">            
-            <div className="search-icon"><WeatherIcon icon={props.icon}/></div>
+            <div className="search-icon"><WeatherIcon icon={props.icon} size={52}/></div>
             <div>
               <h2 className="search-temperature" id="search-temperature">{temperature}</h2>
             </div>
